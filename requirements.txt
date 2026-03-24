@@ -1,0 +1,10 @@
+# Pin for reproducible installs; sync with pyproject.toml
+google-generativeai>=0.8.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+rich>=13.7.0
+typer>=0.12.0
+python-dotenv>=1.0.0
+tiktoken>=0.5.0
+pytest>=8.0
+pytest-asyncio>=0.23

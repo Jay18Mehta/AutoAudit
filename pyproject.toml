@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compliance-guard"
+version = "0.1.0"
+description = "Repository compliance scanner (SOC2, HIPAA, ISO 27001) with Gemini"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Compliance Guard" }]
+dependencies = [
+    "google-generativeai>=0.8.0",
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "rich>=13.7.0",
+    "typer>=0.12.0",
+    "python-dotenv>=1.0.0",
+    "tiktoken>=0.5.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+vector = ["chromadb>=0.4.0", "faiss-cpu>=1.8.0"]
+
+[project.scripts]
+compliance = "compliance_guard.cli.app:app"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+compliance_guard = ["py.typed"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["src"]
