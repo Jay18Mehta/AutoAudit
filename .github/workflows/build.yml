@@ -35,7 +35,7 @@ jobs:
 
       - name: Build binary
         run: |
-          pyinstaller src/compliance_guard/cli/main.py \
+          pyinstaller src/compliance_guard/cli/app.py \
           --onefile \
           --name compliance \
           --clean \
