@@ -34,15 +34,7 @@ jobs:
         run: pip install pyinstaller
 
       - name: Build binary
-        run: |
-          pyinstaller src/compliance_guard/cli/app.py \
-          --onefile \
-          --name compliance \
-          --clean \
-          --collect-all google.generativeai \
-          --collect-all dotenv \
-          --collect-all rich \
-          --collect-all typer
+        run: pyinstaller src/compliance_guard/cli/app.py --onefile --name compliance --clean --collect-all google.generativeai --collect-all dotenv --collect-all rich --collect-all typer
 
       - name: Upload binaries
         uses: actions/upload-artifact@v4
