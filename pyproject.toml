@@ -18,6 +18,8 @@ dependencies = [
     "typer>=0.12.0",
     "python-dotenv>=1.0.0",
     "tiktoken>=0.5.0",
+    "streamlit>=1.30.0",
+    "pandas>=2.0.0",
 ]
 
 [project.optional-dependencies]
@@ -26,6 +28,7 @@ vector = ["chromadb>=0.4.0", "faiss-cpu>=1.8.0"]
 
 [project.scripts]
 compliance = "compliance_guard.cli.app:app"
+compliance-ui = "compliance_guard.ui.run:main"
 
 [tool.setuptools]
 package-dir = { "" = "src" }
